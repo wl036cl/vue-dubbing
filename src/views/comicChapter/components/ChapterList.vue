@@ -2,7 +2,7 @@
 <div v-if="list!=null&&list.length!==0" class="list-wrap">
   <h5 class="title"><img src="@/assets/u62.png"/><span>章节列表</span></h5>
   <ul class="list-ul small-font">
-    <router-link class="title ellipsis" tag="li" v-for="(i,index) in list" :key="index" :to="'/reader/'+cid+'&'+i.id">
+    <router-link class="ellipsis" tag="li" v-for="(i,index) in list" :key="index" :to="'/reader/'+cid+'&'+i.id">
       <span>{{i.title}}</span>
     </router-link>
   </ul>
@@ -23,14 +23,13 @@ export default {
   @boder-color:rgb(204,204,204);
   @list-color:#4c4646;
   .title{
+    vertical-align: middle;
     img{
       width: 14px;height: 14px;
       padding-right: 10px;
     }
     span{
       display: inline-block;
-      vertical-align: middle;
-      font-weight: 600;
     }
   }
 .list-wrap{

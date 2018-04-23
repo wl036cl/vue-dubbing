@@ -13,15 +13,16 @@ import Home from '@/views/home'
 // import ComicReader from '@/views/comicReader'
 // import Recharge from '@/views/recharge'
 
-const err404 = () => import('@/views/errorPage/404')
-const SignUp = () => import('@/views/sign/signUp.vue')
-const SignIn = () => import('@/views/sign/signIn.vue')
-const Agree = () => import('@/views/sign/agree')
-const Contact = () => import('@/views/contact')
-const Comic = () => import('@/views/comic')
-const ComicChapter = () => import('@/views/comicChapter')
-const ComicReader = () => import('@/views/comicReader')
-const Recharge = () => import('@/views/recharge')
+// 懒加载（集中打包到laze）
+const err404 = resolve => require.ensure([], () => resolve(require('@/views/errorPage/404.vue')), 'lazy')
+const SignUp = resolve => require.ensure([], () => resolve(require('@/views/sign/signUp.vue')), 'lazy')
+const SignIn = resolve => require.ensure([], () => resolve(require('@/views/sign/signIn.vue')), 'lazy')
+const Agree = resolve => require.ensure([], () => resolve(require('@/views/sign/agree')), 'lazy')
+const Contact = resolve => require.ensure([], () => resolve(require('@/views/contact')), 'lazy')
+const Comic = resolve => require.ensure([], () => resolve(require('@/views/comic')), 'lazy')
+const ComicChapter = resolve => require.ensure([], () => resolve(require('@/views/comicChapter')), 'lazy')
+const ComicReader = resolve => require.ensure([], () => resolve(require('@/views/comicReader')), 'lazy')
+const Recharge = resolve => require.ensure([], () => resolve(require('@/views/recharge')), 'lazy')
 
 Vue.use(Router)
 
@@ -42,7 +43,7 @@ const router = new Router({
         {path: 'reader/:cid&:ccid', component: ComicReader, name: 'Reader', meta: {title: '漫画'}},
         {path: 'recharge', component: Recharge, name: 'Recharge', meta: {title: '充值', keepAlive: true}},
         {path: 'contact', component: Contact, name: 'Contact', meta: {title: '联系我们', keepAlive: true}},
-        {path: '404', name: '404', component: err404},
+        {path: '404', name: '404', component: err404, meta: {title: '页面不存在'}},
         {path: '*', redirect: '/404'}
       ]
     },
@@ -51,7 +52,7 @@ const router = new Router({
   scrollBehavior: () => ({ y: 0 })
 })
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title
+  document.title = to.meta.title || '配音秀'
   next()
 })
 export default router
