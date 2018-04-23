@@ -1,6 +1,7 @@
 # vue-dubbing
 
-> 基于vue的配音秀web前端
+> 基于vue的配音秀漫画网
+> 移除了config文件，api获取不到的，具体效果，可参考测试环境：http://dubbingshow.com/v/comic
 
 ## Build Setup
 
@@ -29,7 +30,3 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-# 任务
-优化
-1.通过keep-alive缓存组件
-2.异步加载组件
