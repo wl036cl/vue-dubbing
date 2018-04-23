@@ -1,9 +1,9 @@
 # vue-dubbing
 
 > 基于vue的配音秀漫画网，测试环境：http://dubbingshow.com/v/comic
-> 移除了config文件，api获取不到的，具体效果，可参考测试环境
-> 因为简单，在架构之始就决定尽量避免使用各类框架以降低最终成包的大小，根据需要便自己封装了组件，适合学习
-> 技术栈：vue,vue-router,vue-swipe,vuex,axios,vue-cli,webpack
+移除了config文件，api获取不到的，具体效果，可参考测试环境
+因为简单，在架构之始就决定尽量避免使用各类框架以降低最终成包的大小，根据需要便自己封装了组件，适合学习
+技术栈：vue,vue-router,vue-swipe,vuex,axios,vue-cli,webpack
 
 ## Build Setup
 
