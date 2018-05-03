@@ -1,10 +1,9 @@
 <template>
   <div class="home">
     <h1>热门推荐</h1>
-  <CoverList :list="list"></CoverList>
+    <CoverList :list="list"></CoverList>
   </div>
 </template>
-
 <script>
 import CoverList from '@/components/CoverList'
 import {getUrl} from '@/utils/fullUrl'

@@ -8,8 +8,8 @@ import store from '@/store'
 
 // create an axios instance
 const service = axios.create({
-  // baseURL: 'http://dubbingshow.com',
-  baseURL: process.env.BASE_API, // api的base_url
+  baseURL: 'http://dubbingshow.com',
+  // baseURL: process.env.BASE_API, // api的base_url
   headers: {'plat': 'peiyinxiu'},
   timeout: 10000 // request timeout
 })
